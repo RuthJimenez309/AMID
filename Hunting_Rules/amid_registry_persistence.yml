@@ -1,0 +1,20 @@
+﻿title: Persistencia en Registro de Ransomware AMID
+id: e47b31a8-8b21-4f9e-a89c-4f71a4f02a43
+status: experimental
+description: Detecta la creacion de la clave de registro run usada por el malware AMID para asegurar persistencia.
+author: Ruth - Threat Hunter
+date: 2026/09/15
+references:
+    - Internal AMID Report Day 14
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4657 # Modificación de valor de registro
+        ObjectName: '\REGISTRY\USER\*\Software\Microsoft\Windows\CurrentVersion\Run'
+        ObjectValueName: 'OverlordKey'
+    condition: selection
+falsepositives:
+    - Administracion legitima del sistema
+level: critical
