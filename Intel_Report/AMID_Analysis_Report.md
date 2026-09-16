@@ -1,5 +1,5 @@
 ﻿# Reporte Técnico de Inteligencia de Amenazas: AMID 
-**Analista:** J
+**Analista:** JR
 **Estado:** Fase Inicial - Análisis Estático Completado
 A través del análisis estático del binario `payload_compromised.exe`, se aislaron los siguientes artefactos:
 * **Dominio C2 (Red):** `http://malicious-c2-overlord.botnet`
